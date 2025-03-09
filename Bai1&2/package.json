@@ -1,0 +1,30 @@
+{
+    "name": "testintern",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "nodemon --ext ts --exec ts-node src/index.ts",
+        "build": "tsc",
+        "start": "node dist/index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "hieutranhuu15",
+    "license": "ISC",
+    "dependencies": {
+        "@prisma/client": "^6.4.1",
+        "dotenv": "^16.4.7",
+        "express": "^4.21.2",
+        "http-errors": "^2.0.0",
+        "zod": "^3.24.2"
+    },
+    "devDependencies": {
+        "@types/express": "^5.0.0",
+        "@types/node": "^22.13.9",
+        "nodemon": "^3.1.9",
+        "prisma": "^6.4.1",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.8.2"
+    }
+}
