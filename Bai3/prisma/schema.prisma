@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int    @id @default(autoincrement())
+  email     String @unique
+  name      String
+  password  String
+  point     Int    @default(0)
+  role_code String
+  role      Role   @relation(fields: [role_code], references: [role_code])
+
+  // Thêm quan hệ ngược với shopping
+  shoppings shopping[]
+}
+
+model Role {
+  id        Int    @id @default(autoincrement())
+  role_code String @unique
+  role_name String
+
+  // Thêm quan hệ ngược với User
+  users     User[]
+}
+
+model shopping {
+  id          Int     @id @default(autoincrement())
+  name        String
+  description String?
+  user_id     Int
+  user        User    @relation(fields: [user_id], references: [id])
+}
