@@ -2,13 +2,13 @@ import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import prisma from '../config/prisma'
 
-interface User {
+interface UserRegister {
     name: string
     email: string
     password: string
     role_code: string
 }
-export const register = async (data: User) => {
+export const register = async (data: UserRegister) => {
     // Tìm xem user đã tồn tại chưa
     const userExist = await prisma.user.findUnique({
         where: {

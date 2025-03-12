@@ -41,29 +41,6 @@ export const getUserById = async (req: Request, res: Response, next: NextFunctio
     }
 }
 
-export const createUser = async (req: Request, res: Response, next: NextFunction) => {
-    try {
-        const validationResult = userSchema.safeParse(req.body)
-
-        if (!validationResult.success) {
-            res.status(HTTP_STATUS.BAD_REQUEST).json({
-                err: 1,
-                msg: validationResult.error.errors[0].message,
-            })
-            return // nếu có lỗi thì dừng hàm
-        }
-
-        const user = await services.createUser(validationResult.data)
-        res.status(HTTP_STATUS.SUCCESS).json({
-            err: 0,
-            msg: HTTP_MESSAGE.SUCCESS,
-            data: user,
-        })
-    } catch (error) {
-        next(error)
-    }
-}
-
 export const updateUser = async (req: Request, res: Response, next: NextFunction) => {
     try {
         let userId = Number.parseInt(req.params.id)

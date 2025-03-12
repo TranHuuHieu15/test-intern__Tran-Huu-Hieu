@@ -8,7 +8,6 @@ export const NotFoundError = (req: Request, res: Response, next: NextFunction) =
     })
 }
 export const ErrorHandler = (err: any, req: Request, res: Response, next: NextFunction) => {
-    console.error(err)
     res.status(HTTP_STATUS.SERVER_ERROR).json({
         err: 1,
         msg: HTTP_MESSAGE.SERVER_ERROR,

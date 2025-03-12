@@ -19,12 +19,6 @@ export const getUserById = async (id: number) => {
     })
 }
 
-export const createUser = async (data: User) => {
-    return await prisma.user.create({
-        data: data,
-    })
-}
-
 export const updateUser = async (id: number, data: User) => {
     return await prisma.user.update({
         where: {
