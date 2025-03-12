@@ -7,7 +7,7 @@ const router = express.Router()
 
 router.use(verifyToken)
 router.get('/top-user', controllers.getTopUsers)
-router.put('/top-user', isAdminOrModerator, controllers.updateTopUsers)
+router.put('/top-user', isAdmin, controllers.updateTopUsers)
 router.get('/', isAdmin, controllers.getAllUsers)
 router.get('/:id', controllers.getUserById)
 router.put('/:id', controllers.updateUser)
