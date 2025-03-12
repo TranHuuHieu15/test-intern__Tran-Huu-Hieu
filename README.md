@@ -12,4 +12,4 @@
 4.  admin có thể thay đổi bảng top client
 5.  client có thể thay đổi thông tin cá nhân nhưng không thể thay đổi được role_code và point khi và chỉ khi client tạo một shopping thì sẽ được cộng 1 điểm point vào trong tài khoản của client đó
 
-Để chảy được dự án 3 thì cũng làm tương tự như dự án 1&2 nhớ đọc ở file readme.md
+Chi tiết chạy 2 dự án thì sao từng file README.md của từng dự án để đọc ạ. Xin cảm ơn
